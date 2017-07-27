@@ -23,6 +23,10 @@ class ContactListViewController: UIViewController, UITableViewDataSource, UITabl
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        updateData()
+    }
+    
+    func updateData() {
         contacts = realm.objects(Contact.self)
         sortedContacts = contacts.sorted { $0.surname < $1.surname }
         contactListTableView.reloadData()
@@ -51,7 +55,7 @@ class ContactListViewController: UIViewController, UITableViewDataSource, UITabl
             try! self.realm.write {
                 self.realm.delete(self.sortedContacts[indexPath.row])
             }
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            self.updateData()
         }
         deleteAction.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         return [deleteAction]

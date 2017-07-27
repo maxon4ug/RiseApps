@@ -14,6 +14,7 @@ class ContactListViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var contactListTableView: UITableView!
     let realm = try! Realm()
     lazy var contacts: Results<Contact> = { self.realm.objects(Contact.self) }()
+    var sortedContacts = Array<Contact>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,31 +24,32 @@ class ContactListViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         contacts = realm.objects(Contact.self)
+        sortedContacts = contacts.sorted { $0.surname < $1.surname }
         contactListTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if contacts.count == 0 {
+        if sortedContacts.count == 0 {
             contactListTableView.isHidden = true
             return 0
         } else {
             contactListTableView.isHidden = false
-            return contacts.count
+            return sortedContacts.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell") as! ContactTableViewCell
         cell.indexLabel.text = "\(indexPath.row + 1)"
-        cell.markImageView.image = UIImage(named: contacts[indexPath.row].mark)
-        cell.nameLabel.text = "\(contacts[indexPath.row].surname) \(contacts[indexPath.row].name) \(contacts[indexPath.row].patronymic)"
+        cell.markImageView.image = UIImage(named: sortedContacts[indexPath.row].mark)
+        cell.nameLabel.text = "\(sortedContacts[indexPath.row].surname) \(sortedContacts[indexPath.row].name) \(sortedContacts[indexPath.row].patronymic)"
         return cell
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .default, title: "Удалить") { (action, indexPath) in
             try! self.realm.write {
-                self.realm.delete(self.contacts[indexPath.row])
+                self.realm.delete(self.sortedContacts[indexPath.row])
             }
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
@@ -55,5 +57,16 @@ class ContactListViewController: UIViewController, UITableViewDataSource, UITabl
         return [deleteAction]
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "editContactSegue" else { return }
+        let destinationVC = (segue.destination as! UINavigationController).viewControllers.first as! EditContactTableViewController
+        if let selectedCell = (sender as? UITableViewCell), let row = contactListTableView.indexPath(for: selectedCell)?.row {
+            destinationVC.selectedContact = sortedContacts[row]
+        }
+    }
 }
 

@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>PhoneNumberKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-RiseApps.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>91110082D0500B4855019AE02C36A96B</key>
+		<key>552155DD4B4A1F9ED57E31A8771DE530</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B81AD6A92468B8961E5C5C23C9FC5E34</key>
+		<key>8C5BD10883BD185426DD737247F56DEC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F6F6DB30CBB1B8EF5DA2430A2B2E9812</key>
+		<key>908D118563D0A7103336CEAB0ADBE880</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AE91EFDDCCB31B5EFB34A7877D71D906</key>
 		<dict>
 			<key>primary</key>
 			<true/>

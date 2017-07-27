@@ -8,5 +8,6 @@ target 'RiseApps' do
   # Pods for RiseApps
 
   pod 'RealmSwift'
+  pod 'PhoneNumberKit'
 
 end

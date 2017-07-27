@@ -1,4 +1,10 @@
 PODS:
+  - PhoneNumberKit (1.2.3):
+    - PhoneNumberKit/PhoneNumberKitCore (= 1.2.3)
+    - PhoneNumberKit/UIKit (= 1.2.3)
+  - PhoneNumberKit/PhoneNumberKitCore (1.2.3)
+  - PhoneNumberKit/UIKit (1.2.3):
+    - PhoneNumberKit/PhoneNumberKitCore
   - Realm (2.8.0):
     - Realm/Headers (= 2.8.0)
   - Realm/Headers (2.8.0)
@@ -6,12 +12,14 @@ PODS:
     - Realm (= 2.8.0)
 
 DEPENDENCIES:
+  - PhoneNumberKit
   - RealmSwift
 
 SPEC CHECKSUMS:
+  PhoneNumberKit: 1e5cca669113fc361a8c82ec1ee559c62b8cd0f7
   Realm: 929243ad2b618b3232e70658bedc61110e7563f1
   RealmSwift: 5b7079b891f2833d1849294161ba3e092bbda3f6
 
-PODFILE CHECKSUM: b436d5664aeb8a9bf7eafe49f571178ed458b0bb
+PODFILE CHECKSUM: adc10ee243ddbaec311ce08883363dbe33a5b9f1
 
 COCOAPODS: 1.2.1

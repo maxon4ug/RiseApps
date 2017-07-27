@@ -8,10 +8,9 @@
 
 import UIKit
 import RealmSwift
-import PhoneNumberKit
 
-class AddContactTableViewController: UITableViewController {
-
+class EditContactTableViewController: UITableViewController {
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var surnameTextField: UITextField!
     @IBOutlet weak var patronymicTextField: UITextField!
@@ -20,12 +19,28 @@ class AddContactTableViewController: UITableViewController {
     @IBOutlet weak var femaleButton: UIButton!
     @IBOutlet weak var genderButton: UIButton!
     @IBOutlet weak var bisexualButton: UIButton!
+    var markButtons = Array<UIButton>()
     var selectedMark = ""
+    var selectedContact: Contact!
     let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addTargets()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+        markButtons = [maleButton,femaleButton,genderButton,bisexualButton]
+        nameTextField.text = selectedContact.name
+        surnameTextField.text = selectedContact.surname
+        patronymicTextField.text = selectedContact.patronymic
+        phoneTextField.text = selectedContact.phone
+        for button in markButtons {
+            if button.currentTitle == selectedContact.mark {
+                editingChanged(button)
+            }
+        }
     }
     
     func addTargets() {
@@ -38,7 +53,7 @@ class AddContactTableViewController: UITableViewController {
         genderButton.addTarget(self, action: #selector(editingChanged), for: .touchUpInside)
         bisexualButton.addTarget(self, action: #selector(editingChanged), for: .touchUpInside)
     }
-
+    
     func editingChanged(_ view: UIView?) {
         if let textField = view as? UITextField {
             if textField.text?.characters.count == 1 && textField.text?.characters.first == " " {
@@ -46,13 +61,12 @@ class AddContactTableViewController: UITableViewController {
                 return
             }
         } else if let tappedButton = view as? UIButton {
-            let markButtons = [maleButton,femaleButton,genderButton,bisexualButton]
             for button in markButtons {
                 if tappedButton == button {
-                    button!.isSelected = true
-                    selectedMark = button!.currentTitle!
+                    button.isSelected = true
+                    selectedMark = button.currentTitle!
                 } else {
-                    button!.isSelected = false
+                    button.isSelected = false
                 }
             }
         }
@@ -62,11 +76,11 @@ class AddContactTableViewController: UITableViewController {
         }
         self.navigationItem.rightBarButtonItem!.isEnabled = true
     }
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 5
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -74,16 +88,14 @@ class AddContactTableViewController: UITableViewController {
     @IBAction func cancelButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-
+    
     @IBAction func doneButtonTapped(_ sender: Any) {
-        let newContact = Contact()
-        newContact.name = nameTextField.text!
-        newContact.surname = surnameTextField.text!
-        newContact.patronymic = patronymicTextField.text!
-        newContact.phone = phoneTextField.text!
-        newContact.mark = selectedMark
         try! realm.write {
-            realm.add(newContact)
+        selectedContact.name = nameTextField.text!
+        selectedContact.surname = surnameTextField.text!
+        selectedContact.patronymic = patronymicTextField.text!
+        selectedContact.phone = phoneTextField.text!
+        selectedContact.mark = selectedMark
         }
         dismiss(animated: true, completion: nil)
     }

@@ -57,18 +57,19 @@
                                                         <constraint firstAttribute="height" constant="30" id="xWM-BY-6gv"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Иван Васильевич Бровь" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vb8-qu-Lve">
-                                                    <rect key="frame" x="90" y="14" width="191.5" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Иван Васильевич Бровь" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Vb8-qu-Lve">
+                                                    <rect key="frame" x="90" y="14" width="262" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Vb8-qu-Lve" firstAttribute="leading" secondItem="pUA-9h-1dC" secondAttribute="trailing" constant="15" id="4BP-NY-0Rg"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Vb8-qu-Lve" secondAttribute="trailing" constant="15" id="9BG-wU-3SP"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="wEO-Wc-ET3" secondAttribute="leading" constant="-15" id="CXw-28-NHG"/>
                                                 <constraint firstItem="pUA-9h-1dC" firstAttribute="leading" secondItem="wEO-Wc-ET3" secondAttribute="trailing" constant="10" id="IhK-qV-t1A"/>
                                                 <constraint firstItem="pUA-9h-1dC" firstAttribute="centerY" secondItem="bAP-1q-VOE" secondAttribute="centerY" id="Nfg-hb-ikM"/>
+                                                <constraint firstItem="Vb8-qu-Lve" firstAttribute="leading" secondItem="bAP-1q-VOE" secondAttribute="leadingMargin" constant="82" id="dpe-qD-mqD"/>
                                                 <constraint firstItem="wEO-Wc-ET3" firstAttribute="centerY" secondItem="bAP-1q-VOE" secondAttribute="centerY" id="kKV-hb-fFj"/>
                                                 <constraint firstItem="Vb8-qu-Lve" firstAttribute="centerY" secondItem="bAP-1q-VOE" secondAttribute="centerY" id="lAG-vb-evd"/>
                                             </constraints>
@@ -99,6 +100,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Контакты" id="RaX-d5-8ps"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="contactListTableView" destination="msn-rU-7kj" id="4Rq-Ob-m9c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

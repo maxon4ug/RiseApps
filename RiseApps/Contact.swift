@@ -14,5 +14,5 @@ class Contact: Object {
     dynamic var surname = ""
     dynamic var patronymic = ""
     dynamic var phone = ""
-    dynamic var markNumber = 0
+    dynamic var mark = ""
 }

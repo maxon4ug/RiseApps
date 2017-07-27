@@ -16,7 +16,7 @@ class ContactTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        markImageView.layer.cornerRadius = markImageView.frame.size.height / 2.0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

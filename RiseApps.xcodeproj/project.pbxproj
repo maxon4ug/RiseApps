@@ -13,6 +13,7 @@
 		5B4675A11F299D51008E1E5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B46759F1F299D51008E1E5C /* Main.storyboard */; };
 		5B4675A31F299D51008E1E5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B4675A21F299D51008E1E5C /* Assets.xcassets */; };
 		5B4675A61F299D51008E1E5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4675A41F299D51008E1E5C /* LaunchScreen.storyboard */; };
+		5B4675AF1F29A5C5008E1E5C /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4675AE1F29A5C5008E1E5C /* Contact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		5B4675A21F299D51008E1E5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B4675A51F299D51008E1E5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B4675A71F299D51008E1E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B4675AE1F29A5C5008E1E5C /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		8BFF35207B8A9275658A8722 /* Pods-RiseApps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiseApps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RiseApps/Pods-RiseApps.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,14 +80,39 @@
 		5B46759A1F299D51008E1E5C /* RiseApps */ = {
 			isa = PBXGroup;
 			children = (
+				5B4675AD1F29A5B6008E1E5C /* Models */,
+				5B4675B01F29A812008E1E5C /* Controllers */,
+				5B4675B11F29A81C008E1E5C /* Views */,
 				5B46759B1F299D51008E1E5C /* AppDelegate.swift */,
-				5B46759D1F299D51008E1E5C /* ViewController.swift */,
-				5B46759F1F299D51008E1E5C /* Main.storyboard */,
 				5B4675A21F299D51008E1E5C /* Assets.xcassets */,
-				5B4675A41F299D51008E1E5C /* LaunchScreen.storyboard */,
 				5B4675A71F299D51008E1E5C /* Info.plist */,
 			);
 			path = RiseApps;
+			sourceTree = "<group>";
+		};
+		5B4675AD1F29A5B6008E1E5C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B4675AE1F29A5C5008E1E5C /* Contact.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5B4675B01F29A812008E1E5C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5B46759D1F299D51008E1E5C /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5B4675B11F29A81C008E1E5C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5B46759F1F299D51008E1E5C /* Main.storyboard */,
+				5B4675A41F299D51008E1E5C /* LaunchScreen.storyboard */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B4675AF1F29A5C5008E1E5C /* Contact.swift in Sources */,
 				5B46759E1F299D51008E1E5C /* ViewController.swift in Sources */,
 				5B46759C1F299D51008E1E5C /* AppDelegate.swift in Sources */,
 			);
@@ -383,6 +411,7 @@
 				5B4675AC1F299D51008E1E5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

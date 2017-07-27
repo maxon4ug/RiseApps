@@ -15,6 +15,7 @@
 		5B4675A61F299D51008E1E5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4675A41F299D51008E1E5C /* LaunchScreen.storyboard */; };
 		5B4675AF1F29A5C5008E1E5C /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4675AE1F29A5C5008E1E5C /* Contact.swift */; };
 		5B4675B31F29AFAA008E1E5C /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4675B21F29AFAA008E1E5C /* ContactTableViewCell.swift */; };
+		5BCFFB581F29C55100C0449E /* AddContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCFFB571F29C55100C0449E /* AddContactTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		5B4675A71F299D51008E1E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B4675AE1F29A5C5008E1E5C /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		5B4675B21F29AFAA008E1E5C /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		5BCFFB571F29C55100C0449E /* AddContactTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactTableViewController.swift; sourceTree = "<group>"; };
 		8BFF35207B8A9275658A8722 /* Pods-RiseApps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiseApps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RiseApps/Pods-RiseApps.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 		5B4675B01F29A812008E1E5C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5BCFFB571F29C55100C0449E /* AddContactTableViewController.swift */,
 				5B46759D1F299D51008E1E5C /* ContactListViewController.swift */,
 				5B4675B21F29AFAA008E1E5C /* ContactTableViewCell.swift */,
 			);
@@ -243,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B4675B31F29AFAA008E1E5C /* ContactTableViewCell.swift in Sources */,
+				5BCFFB581F29C55100C0449E /* AddContactTableViewController.swift in Sources */,
 				5B4675AF1F29A5C5008E1E5C /* Contact.swift in Sources */,
 				5B46759E1F299D51008E1E5C /* ContactListViewController.swift in Sources */,
 				5B46759C1F299D51008E1E5C /* AppDelegate.swift in Sources */,
